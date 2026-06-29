@@ -18,6 +18,7 @@
                     <li><a href="courses.html">Курстар</a></li>
                     <li><a href="about.html">Туралы</a></li>
                     <li><a href="contact.html">Байланыс</a></li>
+                    <li><a href="cart.html">🛒 Корзина (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </div>
         </nav>
@@ -28,8 +29,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h2>Болашақтағы білімді бүгін үйреніңіз</h2>
-                    <p>LearnHub-та бағдарламалау, дизайн, тіл, бизнес және басқа да салалар бойынша 
-                    сертификатталған курстарға қатысыңыз</p>
+                    <p>LearnHub-та бағдарламалау, дизайн, тіл, бизнес және басқа да салалар бойынша сертификатталған курстарға қатысыңыз</p>
                     <a href="courses.html" class="btn btn-primary">Курстарды қараңыз</a>
                 </div>
                 <div class="hero-image">
@@ -103,41 +103,46 @@
             <div class="container">
                 <h2>Қалай бастамалы болады</h2>
                 <div class="video-container">
-                    <iframe width="100%" height="400" 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        title="LearnHub видеосы" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="LearnHub видеосы" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p style="text-align: center; margin-top: 20px; color: #555;">Бес минуттық видео - LearnHub платформасын пайдалануды үйреніңіз</p>
+                <p style="text-align: center; margin-top: 20px; color: #555;">LearnHub платформасын пайдалануды үйреніңіз</p>
             </div>
         </section>
 
         <section class="how-learn-section">
             <div class="container">
-                <h2>Қалай адамдар оқиды</h2>
+                <h2>Студенттер қалай оқиды</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">LearnHub платформасында оқыту процесі</p>
                 <div class="learn-steps">
                     <div class="step-card">
                         <div class="step-number">1️⃣</div>
                         <h3>Курс таңдау</h3>
-                        <p>Сіз ынамдайтын облыстан курс таңдап, істі бастаңыз</p>
+                        <p>Студент өзінің қызығушылығы бойынша курс таңдайды және қатысуға тіркеледі</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">2️⃣</div>
                         <h3>Видео сабақтар</h3>
-                        <p>Өндіс мамандарының видеосабақтарын өз қарамасында қараңыз</p>
+                        <p>Өндіс мамандарының видеосабақтарын өз қарамасында, өз уақытында қараңыз</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">3️⃣</div>
-                        <h3>Тестілер өтіңіз</h3>
-                        <p>Білімін тексеру үшін интерактивті тестілерді орындаңыз</p>
+                        <h3>Практикалық тапсырмалар</h3>
+                        <p>Үйреніген материалды орындау арқылы бекітіңіз. Преподаватель кері байланыс береді</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">4️⃣</div>
-                        <h3>Сертификат</h3>
-                        <p>Курсты аяқтағаннан кейін ресімдеген сертификат алыңыз</p>
+                        <h3>Тестілерді өту</h3>
+                        <p>Сабақтан өткеннен кейін білімін тексеріңіз интерактивті тестілермен</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5️⃣</div>
+                        <h3>Сұрақтар сұрау</h3>
+                        <p>Форум немесе чатта преподаватели және басқа студенттермен сұрақ қойыңыз</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6️⃣</div>
+                        <h3>Сертификат алу</h3>
+                        <p>Курсты аяқтағаннан кейін ресімдеген сертификат алыңыз және іс-әрекетке қосыңыз</p>
                     </div>
                 </div>
             </div>
@@ -175,5 +180,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+        updateCartCount();
+    </script>
 </body>
 </html>
