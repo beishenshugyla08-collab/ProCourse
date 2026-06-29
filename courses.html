@@ -18,6 +18,7 @@
                     <li><a href="courses.html" class="active">Курстар</a></li>
                     <li><a href="about.html">Туралы</a></li>
                     <li><a href="contact.html">Байланыс</a></li>
+                    <li><a href="cart.html">🛒 Корзина (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </div>
         </nav>
@@ -44,25 +45,36 @@
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FF6B6B' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EPython%3C/text%3E%3C/svg%3E" alt="Python курсы">
                         <h3>Python бағдарламалау</h3>
                         <p>Нөлден құрдасқа дейін Python-ды толық үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Жалпы</span><span class="duration">40 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Жалпы</span>
+                            <span class="duration">40 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.9 (520 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Python бағдарламалау', 'Нөлден құрдасқа дейін Python-ды толық үйреніңіз', 'Жалпы', '40 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%234ECDC4' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EWeb Dev%3C/text%3E%3C/svg%3E" alt="Web Dev курсы">
                         <h3>Веб-бағдарламалау</h3>
                         <p>HTML, CSS, JavaScript пайдаланып веб-сайт құруды үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Орташа</span><span class="duration">60 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Орташа</span>
+                            <span class="duration">60 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.8 (340 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Веб-бағдарламалау', 'HTML, CSS, JavaScript пайдаланып веб-сайт құруды үйреніңіз', 'Орташа', '60 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFE66D' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='%23333' text-anchor='middle' dominant-baseline='middle'%3EData Science%3C/text%3E%3C/svg%3E" alt="Data Science курсы">
                         <h3>Деректер ғылымы</h3>
                         <p>Python және деректер анализ құралдарын пайдалана отырып деректемелерді өңдеу</p>
-                        <div class="course-meta"><span class="level">Құрдас</span><span class="duration">50 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Құрдас</span>
+                            <span class="duration">50 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.7 (210 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Деректер ғылымы', 'Python және деректер анализ құралдарын пайдалана отырып деректемелерді өңдеу', 'Құрдас', '50 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
                 </div>
             </div>
@@ -76,25 +88,36 @@
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%238B5CF6' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EUI/UX%3C/text%3E%3C/svg%3E" alt="UI/UX дизайны">
                         <h3>UI/UX Дизайны</h3>
                         <p>Қолданушы интерфейсінің принциптерін және пайдалануға ыңғайлы дизайнды үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Жалпы</span><span class="duration">35 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Жалпы</span>
+                            <span class="duration">35 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.9 (450 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('UI/UX Дизайны', 'Қолданушы интерфейсінің принциптерін және пайдалануға ыңғайлы дизайнды үйреніңіз', 'Жалпы', '35 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23EC4899' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EFigma%3C/text%3E%3C/svg%3E" alt="Figma курсы">
                         <h3>Figma құралы</h3>
                         <p>Figma пайдаланып дизайн макеті және прототип құруды үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Жалпы</span><span class="duration">25 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Жалпы</span>
+                            <span class="duration">25 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.8 (280 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Figma құралы', 'Figma пайдаланып дизайн макеті және прототип құруды үйреніңіз', 'Жалпы', '25 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%2306B6D4' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EGraphics%3C/text%3E%3C/svg%3E" alt="Графика дизайны">
                         <h3>Графика дизайны</h3>
                         <p>Adobe Creative Suite-ты пайдалана отырып кәсіби суреттер құруды үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Орташа</span><span class="duration">45 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Орташа</span>
+                            <span class="duration">45 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.6 (195 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Графика дизайны', 'Adobe Creative Suite-ты пайдалана отырып кәсіби суреттер құруды үйреніңіз', 'Орташа', '45 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
                 </div>
             </div>
@@ -108,25 +131,36 @@
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%2314B8A6' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EEnglish%3C/text%3E%3C/svg%3E" alt="Ағылшын тілі">
                         <h3>Ағылшын тілі</h3>
                         <p>Барлық деңгейде ағылшын тілін үйреніңіз және практикалық түрде қолдану</p>
-                        <div class="course-meta"><span class="level">Барлығы</span><span class="duration">100 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Барлығы</span>
+                            <span class="duration">100 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.9 (680 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Ағылшын тілі', 'Барлық деңгейде ағылшын тілін үйреніңіз және практикалық түрде қолдану', 'Барлығы', '100 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23F59E0B' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EРусский%3C/text%3E%3C/svg%3E" alt="Орыс тілі">
                         <h3>Орыс тілі</h3>
                         <p>Орыс тілін нөлден сот деңгейге дейін үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Барлығы</span><span class="duration">80 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Барлығы</span>
+                            <span class="duration">80 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.7 (420 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Орыс тілі', 'Орыс тілін нөлден сот деңгейге дейін үйреніңіз', 'Барлығы', '80 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%2310B981' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EChina%3C/text%3E%3C/svg%3E" alt="Қытай тілі">
                         <h3>Қытай тілі</h3>
                         <p>Мандарин қытай тілінің негіздерін және сөйлеу дағдысын үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Жалпы</span><span class="duration">70 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Жалпы</span>
+                            <span class="duration">70 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.8 (310 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Қытай тілі', 'Мандарин қытай тілінің негіздерін және сөйлеу дағдысын үйреніңіз', 'Жалпы', '70 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
                 </div>
             </div>
@@ -140,25 +174,36 @@
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%239333EA' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EMarketing%3C/text%3E%3C/svg%3E" alt="Маркетинг">
                         <h3>Сандық маркетинг</h3>
                         <p>SEO, әлеуметтік медиа маркетингі және контент маркетингін үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Орташа</span><span class="duration">55 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Орташа</span>
+                            <span class="duration">55 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.7 (380 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Сандық маркетинг', 'SEO, әлеуметтік медиа маркетингі және контент маркетингін үйреніңіз', 'Орташа', '55 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23E11D48' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3EFinance%3C/text%3E%3C/svg%3E" alt="Қаржы курсы">
                         <h3>Қаржы негіздері</h3>
                         <p>Инвестиция, қаржы құрылымы және портфель басқарудың негіздерін үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Орташа</span><span class="duration">48 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Орташа</span>
+                            <span class="duration">48 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.9 (520 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Қаржы негіздері', 'Инвестиция, қаржы құрылымы және портфель басқарудың негіздерін үйреніңіз', 'Орташа', '48 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
+
                     <div class="course-card">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%234F46E5' width='300' height='200'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3ELeadership%3C/text%3E%3C/svg%3E" alt="Басшылық">
                         <h3>Басшылық дағдылары</h3>
                         <p>Команданы басқарау және ұйымдық дағдыларды дамытуды үйреніңіз</p>
-                        <div class="course-meta"><span class="level">Құрдас</span><span class="duration">42 сағат</span></div>
+                        <div class="course-meta">
+                            <span class="level">Құрдас</span>
+                            <span class="duration">42 сағат</span>
+                        </div>
                         <div class="course-rating">⭐ 4.8 (290 пікір)</div>
-                        <a href="#" class="btn btn-secondary">Әлгі көру</a>
+                        <button onclick="addToCart('Басшылық дағдылары', 'Команданы басқарау және ұйымдық дағдыларды дамытуды үйреніңіз', 'Құрдас', '42 сағат')" class="btn btn-secondary">🛒 Қосу</button>
                     </div>
                 </div>
             </div>
@@ -196,5 +241,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function addToCart(name, description, level, duration) {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            const exists = cart.some(item => item.name === name);
+            
+            if (!exists && cart.length < 3) {
+                cart.push({ name, description, level, duration });
+                localStorage.setItem('learnhubCart', JSON.stringify(cart));
+                updateCartCount();
+                alert(`✅ "${name}" курсы сіздің корзинаға қосылды! (${cart.length}/3)`);
+            } else if (exists) {
+                alert('⚠️ Бұл курс әлі сіздің корзинада бар!');
+            } else {
+                alert('❌ Максимум 3 курс ғана таңдауға болады!');
+            }
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        updateCartCount();
+    </script>
 </body>
 </html>
