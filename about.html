@@ -18,6 +18,7 @@
                     <li><a href="courses.html">Курстар</a></li>
                     <li><a href="about.html" class="active">Туралы</a></li>
                     <li><a href="contact.html">Байланыс</a></li>
+                    <li><a href="cart.html">🛒 Корзина (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </div>
         </nav>
@@ -49,7 +50,7 @@
                             <li>🎯 <strong>Практикалық</strong> - Іс-әрекетке негіздеген өндіс тәжірибесі</li>
                             <li>🌍 <strong>Қолжетімділік</strong> - Барлығына ашық және қоса жұмыс</li>
                             <li>✨ <strong>Сапа</strong> - Ең сапалы оқытуды ұсыну</li>
-                            <li>🤝 <strong>Қамқорлық</strong> - Әрбір студентке қараңғы назар аудару</li>
+                            <li>🤝 <strong>Қамқорлық</strong> - Әрбір студентке құлақ аудару</li>
                         </ul>
                     </div>
                     <div class="about-image">
@@ -107,14 +108,14 @@
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%234F46E5'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='white' text-anchor='middle' dominant-baseline='middle'%3E👨‍💼%3C/text%3E%3C/svg%3E" alt="Директор">
                         <h3>Бейшен Шугыла</h3>
                         <p class="role">Негіздеушісі және Бас директоры</p>
-                        <p>Технология бизнесінде 10+ жыл тәжірибесі</p>
+                        <p>Технология бизнесінде 10+ жыл тәжірибесі. LearnHub платформасын құрушы</p>
                     </div>
 
                     <div class="team-member">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%238B5CF6'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='white' text-anchor='middle' dominant-baseline='middle'%3E👩‍💻%3C/text%3E%3C/svg%3E" alt="CTO">
                         <h3>Айгуль Сатова</h3>
                         <p class="role">Технологиялық директоры</p>
-                        <p>Платформа құру және масштабтау саласында мамандыққа ие</p>
+                        <p>Платформа құру және масштабтау саласында мамандыққа ие. Әлеуметтік сұра</p>
                     </div>
 
                     <div class="team-member">
@@ -128,7 +129,7 @@
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%2310B981'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📊%3C/text%3E%3C/svg%3E" alt="Операция директоры">
                         <h3>Ерлан Жүсіпов</h3>
                         <p class="role">Операция директоры</p>
-                        <p>Іс-әрекеттерді басқару және студент қанағаттану сақтау</p>
+                        <p>Іс-әрекеттерді басқару және студент қанағаттануын сақтау</p>
                     </div>
                 </div>
             </div>
@@ -150,12 +151,12 @@
                     </div>
                     <div class="achievement">
                         <div class="achievement-icon">🌍</div>
-                        <h3>Қамды түтіну</h3>
+                        <h3>Қамду түтіну</h3>
                         <p>50 елде қызмет көрсетеді және 15+ тіл ұсынады</p>
                     </div>
                     <div class="achievement">
                         <div class="achievement-icon">👥</div>
-                        <h3>Студент санақты</h3>
+                        <h3>Студент саны</h3>
                         <p>2 миллион астам адам LearnHub платформасын пайдаланды</p>
                     </div>
                     <div class="achievement">
@@ -204,5 +205,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+        updateCartCount();
+    </script>
 </body>
 </html>
