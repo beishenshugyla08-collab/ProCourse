@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менің курстарым - LearnHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🎓 LearnHub</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Басты бет</a></li>
+                    <li><a href="courses.html">Курстар</a></li>
+                    <li><a href="about.html">Туралы</a></li>
+                    <li><a href="contact.html">Байланыс</a></li>
+                    <li><a href="cart.html" class="active">🛒 Корзина (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-nav">
+            <div class="container">
+                <h2>Менің таңдаған курстарым</h2>
+            </div>
+        </div>
+
+        <section class="contact-section" style="min-height: 60vh;">
+            <div class="container">
+                <div id="cart-empty" style="text-align: center; padding: 60px 0;">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">🛒 Корзина құс</h2>
+                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">Сіз әлі курс таңдамадыңыз</p>
+                    <a href="courses.html" class="btn btn-primary">Курстарды қараңыз</a>
+                </div>
+
+                <div id="cart-content" style="display: none;">
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem;">Таңдаған курстарым</h2>
+                    
+                    <div id="cart-items" style="margin-bottom: 3rem;"></div>
+
+                    <div style="background-color: #f3f4f6; padding: 2rem; border-radius: 10px; max-width: 600px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">
+                            <span>Барлығы курстар:</span>
+                            <span id="total-courses">0</span>
+                        </div>
+                        <div style="border-top: 2px solid #ddd; padding-top: 1rem; margin-top: 1rem;">
+                            <p style="color: #666; margin-bottom: 1.5rem;">Курстарға қатысуға дайынсыз?</p>
+                            <button onclick="registerCourses()" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem;">
+                                ✅ Барлық курстарға тіркелу
+                            </button>
+                            <button onclick="clearCart()" class="btn" style="width: 100%; padding: 1rem; margin-top: 1rem; background-color: #ef4444; color: white; font-size: 1.05rem;">
+                                🗑️ Тазалау
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LearnHub</h4>
+                    <p>Біздің миссия - әрбір адамға сапалы білімге қол жеткізу</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Сілтемелер</h4>
+                    <ul>
+                        <li><a href="index.html">Басты бет</a></li>
+                        <li><a href="courses.html">Курстар</a></li>
+                        <li><a href="about.html">Туралы</a></li>
+                        <li><a href="contact.html">Байланыс</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Бізді әлеуметтік желіде</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LearnHub. Барлық құқықтар сақталған. | <a href="#">Құпиялылық саясаты</a> | <a href="#">Қызмет шарттары</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            const cartCount = document.getElementById('cart-count');
+            const cartEmpty = document.getElementById('cart-empty');
+            const cartContent = document.getElementById('cart-content');
+            const cartItems = document.getElementById('cart-items');
+            const totalCourses = document.getElementById('total-courses');
+
+            cartCount.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartEmpty.style.display = 'block';
+                cartContent.style.display = 'none';
+            } else {
+                cartEmpty.style.display = 'none';
+                cartContent.style.display = 'block';
+                totalCourses.textContent = cart.length;
+
+                cartItems.innerHTML = cart.map((course, index) => `
+                    <div style="background-color: #fff; border: 1px solid #ddd; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">${course.name}</h3>
+                            <p style="color: #666; margin-bottom: 0.5rem;">${course.description}</p>
+                            <div style="margin-top: 0.5rem;">
+                                <span style="background-color: #4F46E5; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">${course.level}</span>
+                                <span style="margin-left: 0.5rem; color: #666; font-size: 0.9rem;">⏱ ${course.duration}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${index})" style="background-color: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600; white-space: nowrap; margin-left: 1rem;">
+                            ✕ Өшіру
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            const removed = cart[index];
+            cart.splice(index, 1);
+            localStorage.setItem('learnhubCart', JSON.stringify(cart));
+            alert(`✅ "${removed.name}" өшірілді`);
+            loadCart();
+        }
+
+        function clearCart() {
+            if (confirm('Барлық курстарды өшіргіңіз келе ме?')) {
+                localStorage.removeItem('learnhubCart');
+                alert('✅ Корзина тазаланды');
+                loadCart();
+            }
+        }
+
+        function registerCourses() {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            if (cart.length === 0) {
+                alert('❌ Курс таңдамадыңыз!');
+                return;
+            }
+            
+            const courseNames = cart.map(c => c.name).join(', ');
+            alert(`✅ Құтталайын! Сізге ${cart.length} курсқа тіркелу сәтті орындалды!\n\nКурстар: ${courseNames}\n\nЭл. поштаңызға растау хабарламасы жіберіледі.\n\nshugyla@LearnHub.com арқылы біз сізге қосымша ақпарат жібереміз.`);
+            localStorage.removeItem('learnhubCart');
+            loadCart();
+        }
+
+        loadCart();
+    </script>
+</body>
+</html>
